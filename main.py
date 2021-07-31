@@ -23,10 +23,10 @@ labels = open(labelsFile).read().strip().split("\n")
 numpy.random.seed(100)
 colours = numpy.random.randint(0, 255, size=(len(labels), 3),
  dtype="uint8")
-# Define location of cfg and weight files for our model.
+    # Define location of cfg and weight files for our model.
 weightsPath = os.path.sep.join([args["yolo"], "yolov3.weights"])
 configPath = os.path.sep.join([args["yolo"], "yolov3.cfg"])
-# Load our network model with the given configs and determine names
+     # Load our network model with the given configs and determine names
 # of the output layers.
 neuralNetwork = cv2.dnn.readNetFromDarknet(configPath, weightsPath)
 layerNames = neuralNetwork.getLayerNames()
